@@ -4,6 +4,7 @@
 
 body{
     font-family: 'Roboto', sans-serif;
+    background-color: #e5e5e5;
 }
 
 .topo{
@@ -66,12 +67,18 @@ h2{
 
 .itens{
     width: 172px;
-    height: 216px;
     background-color: #FFFFFF;
     border-radius: 9px;
     padding: 15px 14px;
     margin-right: 15px;
     margin-bottom: 10px;
+}
+
+.itens img{
+    width: 144px;
+    height: 87px;
+    border-radius: 9px;
+    object-fit:cover;
 }
 
 h3, .descricao-itens, .preco-itens{
@@ -107,6 +114,20 @@ h3{
     position: fixed;
     bottom: 0;
     right: 467px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.barra-inferior button{
+    height: 61px;
+    width: 364px;
+    border-radius: 50px;
+    border: none;
+    font-size: 20px;
+    font-weight: 400;
+    color: #FFFFFF;
+    background-color: #CBCBCB;
 }
 
 
