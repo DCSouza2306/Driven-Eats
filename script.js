@@ -95,11 +95,30 @@ function chamaWpp(botao){
     let valorBebida = precoBebida.innerHTML;
     let valorSobremesa = precoSobremesa.innerHTML;
 
+    valorPrato = valorPrato.replace("R$ ", "");
+    valorPrato = valorPrato.replace(",", ".");
+
+    valorBebida = valorBebida.replace("R$ ", "");
+    valorBebida = valorBebida.replace(",", ".");
+    
+    valorSobremesa = valorSobremesa.replace("R$ ", "");
+    valorSobremesa = valorSobremesa.replace(",", ".");
+
+    valorPrato = Number(valorPrato);
+    valorBebida = Number(valorBebida);
+    valorSobremesa = Number(valorSobremesa);
+
     let somaValores = valorBebida + valorPrato + valorSobremesa;
 
-    let texto = `Olá, gostaria de fazer o pedido: \n - Prato: ${textoPrato} \n - Bebida: ${textoBebida} \n - Sobremesa: ${textoSobremesa} \n Valor total é de ${somaValores}`;
+    somaValores = somaValores.toFixed(2);
 
-    console.log(texto);
+    let texto = `Olá, gostaria de fazer o pedido: \n - Prato: ${textoPrato} \n - Bebida: ${textoBebida} \n - Sobremesa: ${textoSobremesa} \n Valor total é de R$ ${somaValores}`;
+
+    let URICode = encodeURIComponent(texto);
+
+    let mensagem = `https://wa.me/5528988146271?text=${URICode}`;
+
+    console.log(mensagem);
 
     let teste = document.querySelector(".barra-inferior a")
     console.log(teste);
