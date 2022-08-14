@@ -116,10 +116,9 @@ function chamaWpp(botao){
 
     let URICode = encodeURIComponent(texto);
 
-    let mensagem = `https://wa.me/5528988146271?text=${URICode}`;
+    let mensagemWpp = `https://wa.me/5528988146271?text=${URICode}`;
 
-    console.log(mensagem);
-
-    let teste = document.querySelector(".barra-inferior a")
-    console.log(teste);
+    let botaoWpp = document.querySelector(".barra-inferior a")
+    botaoWpp.setAttribute("href",mensagemWpp);
+    botaoWpp.setAttribute("target", "_blank");
 }
