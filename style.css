@@ -18,6 +18,7 @@ body{
     position: fixed;
     top: 0;
     right: 467px;
+    z-index: 1;
     
 }
 
@@ -66,7 +67,7 @@ h2{
 }
 
 .itens{
-    width: 172px;
+    width: 182px;
     background-color: #FFFFFF;
     border-radius: 9px;
     padding: 15px 14px;
@@ -99,6 +100,25 @@ h3{
     text-align: left;
 }
 
+.preco-check{
+    display: flex;
+    justify-content: space-between;
+}
+
+ion-icon{
+    color: #32B72F;
+    font-size: 19px;
+    margin-top: 8px;
+}
+
+.escondido{
+    display: none;
+}
+
+.selecionado{
+    border: #32B72F 5px solid;
+}
+
 .preco-itens{
     color: #000000;
     font-size: 16px;
@@ -119,7 +139,12 @@ h3{
     justify-content: center;
 }
 
-.barra-inferior button{
+.barra-inferior a{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.botao, .botao-habilitado{
     height: 61px;
     width: 364px;
     border-radius: 50px;
@@ -130,4 +155,6 @@ h3{
     background-color: #CBCBCB;
 }
 
-
+.botao-habilitado{
+    background-color: #32B72F;
+}
