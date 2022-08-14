@@ -20,7 +20,8 @@
     </div>
 
     <div class="container">
-        <div class="secao-itens"> <!-- Pratos-->
+        <div class="secao-itens">
+            <!-- Pratos-->
             <h2>Primeiro, seu prato</h2>
             <div class="lista-itens prato">
                 <div class="itens" onclick="selecionaPrato(this)">
@@ -75,7 +76,8 @@
             </div>
         </div>
 
-        <div class="secao-itens"> <!--Bebidas-->
+        <div class="secao-itens">
+            <!--Bebidas-->
             <h2>Agora, sua bebida</h2>
             <div class="lista-itens bebida">
 
@@ -111,7 +113,8 @@
 
             </div>
         </div>
-        <div class="secao-itens"> <!--Sobremesa-->
+        <div class="secao-itens">
+            <!--Sobremesa-->
             <h2>Por fim, sua sobremesa</h2>
             <div class="lista-itens sobremesa">
 
@@ -163,12 +166,12 @@
 
     <div class="barra-inferior">
         <button class="botao">Selecione os 3 itens <br> para fechar o pedido</button>
-        <button class="botao-habilitado escondido" onclick="chamaWpp(this)"><a>Fechar pedido</a></button>
+        <a class="botao-habilitado escondido" onclick="chamaWpp(this)">Fechar pedido</a>
     </div>
-
+    <script src="./script.js"></script>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
 </body>
 
-<script src="./script.js"></script>
-<script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+
 
 </html>

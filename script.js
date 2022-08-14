@@ -87,6 +87,9 @@ function habilitarBotao(){
 }
 
 function chamaWpp(botao){
+    let nome = prompt("Digite seu nome");
+    let endereco = prompt("Digite seu endereço");
+
     let textoPrato = pratoSelecionado.innerHTML;
     let textoBebida = bebidaSelecionada.innerHTML;
     let textoSobremesa = sobremesaSelecionada.innerHTML;
@@ -112,13 +115,12 @@ function chamaWpp(botao){
 
     somaValores = somaValores.toFixed(2);
 
-    let texto = `Olá, gostaria de fazer o pedido: \n - Prato: ${textoPrato} \n - Bebida: ${textoBebida} \n - Sobremesa: ${textoSobremesa} \n Valor total é de R$ ${somaValores}`;
+    let texto = `Olá, gostaria de fazer o pedido: \n - Prato: ${textoPrato} \n - Bebida: ${textoBebida} \n - Sobremesa: ${textoSobremesa} \n Valor total é de R$ ${somaValores}\n\n Nome: ${nome}\n Endereço: ${endereco}`;
 
     let URICode = encodeURIComponent(texto);
 
     let mensagemWpp = `https://wa.me/5528988146271?text=${URICode}`;
 
-    let botaoWpp = document.querySelector(".barra-inferior a")
-    botaoWpp.setAttribute("href",mensagemWpp);
-    botaoWpp.setAttribute("target", "_blank");
+    botao.setAttribute("href",mensagemWpp);
+    botao.setAttribute("target", "_blank");
 }
