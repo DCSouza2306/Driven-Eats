@@ -86,6 +86,65 @@ function habilitarBotao(){
     }
 }
 
+function confirmarPedido(){
+
+    const prato = document.querySelector('.pedido-prato .nome');
+    prato.innerHTML = pratoSelecionado.innerHTML;
+
+    const bebida = document.querySelector('.pedido-bebida .nome');
+    bebida.innerHTML = bebidaSelecionada.innerHTML;
+
+    const sobremesa = document.querySelector('.pedido-sobremesa .nome');
+    sobremesa.innerHTML = sobremesaSelecionada.innerHTML;
+
+    let valorPrato = precoPrato.innerHTML;
+    let valorBebida = precoBebida.innerHTML;
+    let valorSobremesa = precoSobremesa.innerHTML;
+
+    valorPrato = valorPrato.replace("R$ ", "");
+    valorBebida = valorBebida.replace("R$ ", "");
+    valorSobremesa = valorSobremesa.replace("R$ ", "");
+
+    const valorPratoConfirmado = document.querySelector('.pedido-prato .preco');
+    valorPratoConfirmado.innerHTML = valorPrato;
+
+    const valorBebidaConfirmada = document.querySelector('.pedido-bebida .preco');
+    valorBebidaConfirmada.innerHTML = valorBebida;
+
+    const valorSobremesaConfirmada = document.querySelector('.pedido-sobremesa .preco');
+    valorSobremesaConfirmada.innerHTML = valorSobremesa;
+
+    valorPrato = valorPrato.replace(",", ".");
+    valorBebida = valorBebida.replace(",", ".");
+    valorSobremesa = valorSobremesa.replace(",", ".");
+
+    valorPrato = Number(valorPrato);
+    valorBebida = Number(valorBebida);
+    valorSobremesa = Number (valorSobremesa);
+
+    let somaValores = valorPrato + valorSobremesa + valorBebida;
+    somaValores = somaValores.toFixed(2);
+
+    somaValores = String(somaValores);
+
+    somaValores = somaValores.replace(".",",");
+
+    somaValores = `R$ ${somaValores}`;
+
+    let valorTotalConfirmado = document.querySelector('.total span');
+    valorTotalConfirmado.innerHTML = somaValores;
+
+    console.log(somaValores);
+
+
+    let elemento = document.querySelector(".fundo");
+    elemento.classList.remove('escondido');
+
+    elemento = document.querySelector('.confirma-pedido');
+    elemento.classList.remove('escondido');
+}
+
+
 function chamaWpp(botao){
     let nome = prompt("Digite seu nome");
     let endereco = prompt("Digite seu endereço");
@@ -123,4 +182,12 @@ function chamaWpp(botao){
 
     botao.setAttribute("href",mensagemWpp);
     botao.setAttribute("target", "_blank");
+}
+
+function voltarPedido(){
+    let elemento = document.querySelector('.confirma-pedido');
+    elemento.classList.add('escondido');
+
+    elemento = document.querySelector('.fundo');
+    elemento.classList.add('escondido');
 }
